@@ -17,7 +17,7 @@ load_dotenv()
 
 app = Flask(__name__)
 # Isi ALLOWED_ORIGINS dengan URL frontend (pisah koma), mis. https://ai-chat.vercel.app
-origins = [o.strip() for o in os.getenv("https://ai-chat-app-auto-tts-qsez.vercel.app", "*").split(",") if o.strip()]
+origins = [o.strip() for o in os.getenv("ALLOWED_ORIGINS", "*").split(",") if o.strip()]
 CORS(app, origins=origins)
 
 # Semua provider di bawah gratis dan kompatibel OpenAI.
